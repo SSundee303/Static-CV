@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full Profile - Dale Lorenz Edillor</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #dc2626;
+            --secondary-color: #6b7280;
+            --accent-color: #dc2626;
+            --background-color: #0f0f0f;
+            --card-background: #1a1a1a;
+            --text-primary: #ffffff;
+            --text-secondary: #d1d5db;
+            --border-color: #374151;
+            --shadow: 0 4px 6px -1px rgba(220, 38, 38, 0.2), 0 2px 4px -1px rgba(0, 0, 0, 0.8);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        .navbar {
+            background: linear-gradient(135deg, #000000, #dc2626);
+            box-shadow: var(--shadow);
+            padding: 1rem 0;
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: white !important;
+            text-decoration: none;
+        }
+
+        .navbar-brand:hover {
+            color: #fca5a5 !important;
+        }
+
+        .main-container {
+            min-height: calc(100vh - 200px);
+            padding: 2rem 0;
+        }
+
+        .profile-card {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .profile-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .profile-name {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .profile-title {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+        }
+
+        .profile-body {
+            background: var(--card-background);
+            border-radius: 16px;
+            padding: 2rem;
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow);
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 0.5rem;
+        }
+
+        .skill-tag {
+            display: inline-block;
+            background: var(--primary-color);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            margin: 0.25rem 0.5rem 0.25rem 0;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .experience-item {
+            background: var(--background-color);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--primary-color);
+            transition: all 0.3s ease;
+        }
+
+        .experience-item:hover {
+            transform: translateX(8px);
+            box-shadow: var(--shadow);
+        }
+
+        .experience-item h4 {
+            color: var(--primary-color);
+            margin-bottom: 0.75rem;
+            font-size: 1.1rem;
+        }
+
+        .achievement-item, .certification-item, .workshop-item {
+            display: flex;
+            background: var(--background-color);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            transition: all 0.3s ease;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .achievement-item:hover, .certification-item:hover, .workshop-item:hover {
+            transform: translateX(8px);
+            box-shadow: var(--shadow);
+        }
+
+        .achievement-date, .cert-date, .workshop-date {
+            min-width: 120px;
+            font-weight: 600;
+            color: var(--primary-color);
+            font-size: 0.9rem;
+        }
+
+        .achievement-content, .cert-content, .workshop-content {
+            flex: 1;
+        }
+
+        .achievement-content h5, .cert-content h5, .workshop-content h5 {
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+            font-size: 1rem;
+        }
+
+        .ctf-section {
+            background: var(--background-color);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .ctf-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .ctf-badge {
+            background: var(--primary-color);
+            color: white;
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        .btn-primary {
+            background: var(--primary-color);
+            border: none;
+            border-radius: 8px;
+            padding: 0.75rem 1.5rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            color: white;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary:hover {
+            background: #b91c1c;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+            color: white;
+        }
+
+        .footer {
+            background: var(--background-color);
+            border-top: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 25px;
+            padding: 0.75rem 1.25rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            min-width: 120px;
+            justify-content: center;
+        }
+
+        .social-link:hover {
+            background: #dc2626;
+            transform: translateY(-2px);
+            color: white;
+            box-shadow: 0 4px 12px rgba(220, 38, 38, 0.3);
+        }
+
+        .social-link i {
+            font-size: 1.2rem;
+        }
+
+        @media (max-width: 768px) {
+            .profile-name {
+                font-size: 2rem;
+            }
+            
+            .achievement-item, .certification-item, .workshop-item {
+                flex-direction: column;
+            }
+            
+            .achievement-date, .cert-date, .workshop-date {
+                min-width: auto;
+                margin-bottom: 0.5rem;
+            }
+            
+            .ctf-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="navbar-brand">
+                <i class="fas fa-user-circle me-2"></i>Profile
+            </a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-container">
+        <div class="profile-card">
+            <div class="profile-header">
+                <h1 class="profile-name">Dale Lorenz P. Edillor</h1>
+                <p class="profile-title">CTF Player • Aspiring Ethical Hacker & Pen Tester</p>
+            </div>
+
+            <div class="profile-body">
+                <h3 class="section-title">About Me</h3>
+                <p>Driven cybersecurity student with hands-on experience in CTFs and strong proficiency in Kali Linux, Wireshark, and related tools. Eager to apply skills in penetration testing and red/blue team operations, with a solid background in vulnerability assessment, threat hunting, and national-level competitions. Seeking to contribute to a security-focused organization through proactive, real-world problem-solving.</p>
+                
+                <h3 class="section-title">Skills</h3>
+                <span class="skill-tag">Web Exploitation</span>
+                <span class="skill-tag">OSINT</span>
+                <span class="skill-tag">Kali Linux</span>
+                <span class="skill-tag">Wireshark</span>
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">Django</span>
+                <span class="skill-tag">JavaScript</span>
+                <span class="skill-tag">HTML/CSS</span>
+                <span class="skill-tag">WordPress</span>
+                <span class="skill-tag">MySQL</span>
+                <span class="skill-tag">PostgreSQL</span>
+                <span class="skill-tag">Git</span>
+                <span class="skill-tag">Arduino</span>
+
+                <h3 class="section-title">Experience</h3>
+                <div class="experience-item">
+                    <h4>Developer — ExploreMSU: Academic Virtual Tour Platform</h4>
+                    <p class="text-muted">Mindanao State University | September 2024 – Present</p>
+                    <p>Built a WordPress-based virtual tour platform to help students and visitors explore the MSU campus online. Built a customized plugin to showcase the ACF post types dynamically and interactively.</p>
+                </div>
+
+                <h3 class="section-title">Awards & Competitions</h3>
+                <div class="achievement-item">
+                    <div class="achievement-date">Feb 20, 2025</div>
+                    <div class="achievement-content">
+                        <h5><i class="fas fa-trophy me-2"></i>Top 2 - JITS IT Week 2025 - Hackathon</h5>
+                        <p><strong>Org:</strong> Jose Ignacio Technical School</p>
+                    </div>
+                </div>
+                <div class="achievement-item">
+                    <div class="achievement-date">Apr 22, 2024</div>
+                    <div class="achievement-content">
+                        <h5><i class="fas fa-trophy me-2"></i>Top 2 - JITS IT Week 2024 – Hackathon</h5>
+                        <p><strong>Org:</strong> Jose Ignacio Technical School</p>
+                    </div>
+                </div>
+                <div class="achievement-item">
+                    <div class="achievement-date">May 12, 2023</div>
+                    <div class="achievement-content">
+                        <h5><i class="fas fa-trophy me-2"></i>Champion - Campus Devcon – Hackathon</h5>
+                        <p><strong>Org:</strong> Campus Devcon</p>
+                    </div>
+                </div>
+                <div class="achievement-item">
+                    <div class="achievement-date">May 9, 2023</div>
+                    <div class="achievement-content">
+                        <h5><i class="fas fa-trophy me-2"></i>Top 2 - JITS IT Week 2023 - Coding Competition</h5>
+                        <p><strong>Org:</strong> Jose Ignacio Technical School</p>
+                    </div>
+                </div>
+                <div class="achievement-item">
+                    <div class="achievement-date">Aug 22, 2025</div>
+                    <div class="achievement-content">
+                        <h5><i class="fas fa-trophy me-2"></i>1st place – Trend University Capture The Flag</h5>
+                        <p><strong>Org:</strong> Trend University</p>
+                    </div>
+                </div>
+                <div class="achievement-item">
+                    <div class="achievement-date">Jul 20, 2025</div>
+                    <div class="achievement-content">
+                        <h5><i class="fas fa-trophy me-2"></i>952nd place – DownUnderCTF6</h5>
+                        <p><strong>Org:</strong> DownUnderCTF</p>
+                    </div>
+                </div>
+
+                <h3 class="section-title">CTF Achievements</h3>
+                <div class="ctf-section">
+                    <div class="ctf-grid">
+                        <span class="ctf-badge">Brutus – HackTheBox Sherlock Module</span>
+                        <span class="ctf-badge">ElectricBreeze-1 – HackTheBox Sherlock Module</span>
+                        <span class="ctf-badge">Origins – HackTheBox Sherlock Module</span>
+                        <span class="ctf-badge">DreamJob-1 – HackTheBox Sherlock Module</span>
+                        <span class="ctf-badge">SmartyPants – HackTheBox Sherlock Module</span>
+                        <span class="ctf-badge">UFO-1 – HackTheBox Sherlock Module</span>
+                        <span class="ctf-badge">CrownJewel-1 – HackTheBox Sherlock Module</span>
+                        <span class="ctf-badge">CrownJewel-2 – HackTheBox Sherlock Module</span>
+                        <span class="ctf-badge">Reaper – HackTheBox Sherlock Module</span>
+                        <span class="ctf-badge">Noxious – HackTheBox Sherlock Module</span>
+                        <span class="ctf-badge">Campfire-1 – HackTheBox Sherlock Module</span>
+                        <span class="ctf-badge">Campfire-2 – HackTheBox Sherlock Module</span>
+                        <span class="ctf-badge">Unit42 – HackTheBox Sherlock Module</span>
+                        <span class="ctf-badge">BFT – HackTheBox Sherlock Module</span>
+                    </div>
+                </div>
+
+                <h3 class="section-title">Certifications</h3>
+                <div class="certification-item">
+                    <div class="cert-date">Apr 29, 2025</div>
+                    <div class="cert-content">
+                        <h5><i class="fas fa-certificate me-2"></i>Introduction to Internet of Things</h5>
+                        <p><strong>Issuer:</strong> Cisco</p>
+                    </div>
+                </div>
+                <div class="certification-item">
+                    <div class="cert-date">Mar 2025</div>
+                    <div class="cert-content">
+                        <h5><i class="fas fa-certificate me-2"></i>Digital Transformation with Google Cloud</h5>
+                        <p><strong>Issuer:</strong> Google Cloud Skills Boost</p>
+                    </div>
+                </div>
+                <div class="certification-item">
+                    <div class="cert-date">Jun 4, 2025</div>
+                    <div class="cert-content">
+                        <h5><i class="fas fa-certificate me-2"></i>Cybersecurity Essentials (LFC108)</h5>
+                        <p><strong>Issuer:</strong> Linux Foundation</p>
+                    </div>
+                </div>
+
+                <h3 class="section-title">Seminars & Workshops</h3>
+                <div class="workshop-item">
+                    <div class="workshop-date">Mar 10, 2025</div>
+                    <div class="workshop-content">
+                        <h5>Game Dev Workshop</h5>
+                        <p><strong>Organizers:</strong> DICT & Kave Guild</p>
+                    </div>
+                </div>
+
+                <h3 class="section-title">Contact</h3>
+                <p>
+                    <i class="fas fa-envelope me-2"></i>dalelorenz303@gmail.com<br>
+                    <i class="fas fa-map-marker-alt me-2"></i>Ricarda Road, Polotana Phase 3, Poblacion, Polomolok, South Cotabato<br>
+                </p>
+                <div class="social-links">
+                    <a href="https://github.com/SSundee303" class="social-link" target="_blank"><i class="fab fa-github me-1"></i>GitHub</a>
+                    <a href="https://www.linkedin.com/in/dale-lorenz-edillor-082708362" class="social-link" target="_blank"><i class="fab fa-linkedin me-1"></i>LinkedIn</a>
+                    <a href="https://www.instagram.com/lorenz_edillor" class="social-link" target="_blank"><i class="fab fa-instagram me-1"></i>Instagram</a>
+                    <a href="https://www.facebook.com/dalelorenz.edillor.5" class="social-link" target="_blank"><i class="fab fa-facebook me-1"></i>Facebook</a>
+                </div>
+
+                <div class="text-center mt-4">
+                    <a href="index.html" class="btn btn-primary">
+                        <i class="fas fa-arrow-left me-2"></i>Back to Overview
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Professional Profile. All rights reserved.</p>
+            <div class="social-links">
+                <a href="https://github.com/SSundee303" class="social-link" target="_blank">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/dale-lorenz-edillor-082708362" class="social-link" target="_blank">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://www.instagram.com/lorenz_edillor" class="social-link" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.facebook.com/dalelorenz.edillor.5" class="social-link" target="_blank">
+                    <i class="fab fa-facebook"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
