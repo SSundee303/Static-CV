@@ -97,45 +97,69 @@
             box-shadow: var(--shadow);
         }
 
-        /* Buttons */
+        /* Buttons - Override Bootstrap defaults */
         .btn {
             border-radius: 8px;
             font-weight: 600;
             padding: 0.75rem 1.5rem;
             transition: all 0.3s ease;
+            border: none;
+        }
+
+        /* Override any Bootstrap primary/blue buttons */
+        .btn-primary,
+        .btn-primary:focus,
+        .btn-primary:active {
+            background-color: var(--primary-color) !important;
+            border-color: var(--primary-color) !important;
+            color: white !important;
+            box-shadow: 0 2px 4px rgba(220, 38, 38, 0.3) !important;
+        }
+
+        .btn-primary:hover {
+            background-color: #b91c1c !important;
+            border-color: #b91c1c !important;
+            color: white !important;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow) !important;
         }
 
         .btn-danger {
-            background-color: var(--primary-color);
-            border: none;
-            color: white;
+            background-color: var(--primary-color) !important;
+            border: 1px solid var(--primary-color) !important;
+            color: white !important;
+            box-shadow: 0 2px 4px rgba(220, 38, 38, 0.3);
         }
 
         .btn-danger:hover:not(:disabled) {
-            background-color: #b91c1c;
+            background-color: #b91c1c !important;
+            border-color: #b91c1c !important;
             transform: translateY(-2px);
             box-shadow: var(--shadow);
-            color: white;
+            color: white !important;
         }
 
         .btn-danger:disabled {
-            background-color: #4b5563;
-            color: var(--text-secondary);
+            background-color: #374151 !important;
+            border-color: #374151 !important;
+            color: var(--text-secondary) !important;
             cursor: not-allowed;
-            opacity: 0.6;
+            opacity: 0.5;
+            box-shadow: none;
         }
 
         .btn-secondary {
-            background-color: var(--card-background);
-            border: 1px solid var(--border-color);
-            color: var(--text-primary);
+            background-color: var(--background-color) !important;
+            border: 1px solid var(--border-color) !important;
+            color: var(--text-primary) !important;
         }
 
         .btn-secondary:hover {
-            background-color: var(--background-color);
-            border-color: var(--primary-color);
-            color: var(--primary-color);
+            background-color: var(--card-background) !important;
+            border-color: var(--primary-color) !important;
+            color: var(--primary-color) !important;
             transform: translateY(-2px);
+            box-shadow: 0 2px 8px rgba(220, 38, 38, 0.2);
         }
 
         /* Column Search Inputs */
@@ -263,31 +287,40 @@
         }
 
         .dataTables_paginate .paginate_button {
-            background-color: var(--card-background) !important;
+            background-color: var(--background-color) !important;
             border: 1px solid var(--border-color) !important;
             color: var(--text-primary) !important;
             border-radius: 8px !important;
             padding: 0.5rem 1rem !important;
             margin: 0 0.25rem !important;
             transition: all 0.3s ease !important;
+            box-shadow: none !important;
         }
 
-        .dataTables_paginate .paginate_button:hover {
+        .dataTables_paginate .paginate_button:hover:not(.disabled) {
             background-color: var(--primary-color) !important;
             border-color: var(--primary-color) !important;
             color: white !important;
             transform: translateY(-2px);
+            box-shadow: 0 2px 8px rgba(220, 38, 38, 0.3) !important;
         }
 
         .dataTables_paginate .paginate_button.current {
             background-color: var(--primary-color) !important;
             border-color: var(--primary-color) !important;
             color: white !important;
+            box-shadow: 0 2px 8px rgba(220, 38, 38, 0.4) !important;
         }
 
-        .dataTables_paginate .paginate_button.disabled {
-            opacity: 0.5;
+        .dataTables_paginate .paginate_button.disabled,
+        .dataTables_paginate .paginate_button.disabled:hover {
+            background-color: var(--background-color) !important;
+            border-color: var(--border-color) !important;
+            color: var(--text-secondary) !important;
+            opacity: 0.4;
             cursor: not-allowed;
+            box-shadow: none !important;
+            transform: none !important;
         }
 
         /* DataTables Buttons */
@@ -296,20 +329,29 @@
         }
 
         .dt-button {
-            background-color: var(--card-background) !important;
+            background-color: var(--background-color) !important;
             border: 1px solid var(--border-color) !important;
             color: var(--text-primary) !important;
             border-radius: 8px !important;
             padding: 0.5rem 1rem !important;
             font-weight: 500 !important;
             transition: all 0.3s ease !important;
+            box-shadow: none !important;
         }
 
-        .dt-button:hover {
+        .dt-button:hover:not(.disabled) {
             background-color: var(--primary-color) !important;
             border-color: var(--primary-color) !important;
             color: white !important;
             transform: translateY(-2px);
+            box-shadow: 0 2px 8px rgba(220, 38, 38, 0.3) !important;
+        }
+
+        .dt-button.active {
+            background-color: var(--primary-color) !important;
+            border-color: var(--primary-color) !important;
+            color: white !important;
+            box-shadow: 0 2px 8px rgba(220, 38, 38, 0.4) !important;
         }
 
         /* Custom layout adjustments */
